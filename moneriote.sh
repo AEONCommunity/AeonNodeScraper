@@ -3,22 +3,22 @@
 
 # This is the directory where files are written to.
 # If you run as a cronjob, you have to use the full path
-DIR=/home/main12/files_moneriote
+DIR=/home/ubuntu/files_moneriote
 
 # This is the path for your monerod binary.
-monerod=monerod
+monerod=aeond
 
 # This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
-daemon=192.168.1.2
+daemon=127.0.0.1
 
 #Where your going to dump the file that will be published
-html_dir=/var/www/mine.moneroworld.com/public_html/pages/
+html_dir=/var/www/www.aeon-wallet.net/nodes/
 
 # Bound rpc port
-bport=18089
+bport=11189
 
 #Port to sniff for
-port=18089
+port=111181
 
 echo $monerod
 echo $daemon

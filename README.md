@@ -1,8 +1,9 @@
 # moneriote
 ## Portmanteu of Monero + Symbiote
 ### A symbiotic relationship exists between those that run open nodes and those that use them.
+#### Modified for AEON
 
-Scripts to maintain a database of monero nodes with their RPC ports open
+Scripts to maintain a database of AEON nodes with their RPC ports open
 
 There will be so much bash it won't be funny. 
 
@@ -15,6 +16,8 @@ Copyright © 2017 Gingeropolous <gingeropolous@tutanota.com>
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See the COPYING file for more details.
+Modifications Copyright © 2018 LesPristy
+Released under the same fucking license.
 
 # DEPENDENCIES
 

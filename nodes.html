@@ -1,68 +1,49 @@
 <center>
-<iframe data-aa='472939' src='//ad.a-ads.com/472939?size=728x90' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
-<h1><span style="color:#000000;">Moneroworld Open Nodes</span></h1>
+<h1><span style="color:#000000;">Aeon-Wallet.net Open Nodes</span></h1>
 <h3> <strong> What is an Open Node?</strong></h3>
 <h2>Use these at your own risk!</h2>
-<p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.
-This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" a.k.a. network service</p>
-<p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as detailed here.</a></p>
-<p>That being said, no one can steal your monero because you use a remote node. </p> 
-<h1>You should really run your own node</h1>
-<p>Its honestly not that hard - it can take 40 minutes to synchronize if you have a SSD and a good internet connection. Also, these remote nodes are NOT reliable. A lot of times they just won't connect, because the software really wasn't made for this.</p>
-<p>Download your node software here: <a href="https://getmonero.org/downloads/">GetMonero.org</a> and learn how to run the software <a href="https://getmonero.org/getting-started/running">here</a></p> 
+<p>The AEON software architecture allows for an easy way to use AEON without downloading the entire blockchain.
+This is called "using a remote node"; these are often referred to as "public nodes" becasue they are open for anyone to connect. Essentially, your wallet program connects to someone elses aeond (blockchain) program, a.k.a "node" a.k.a. network service</p>
+<p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as explained here for Monero</a>, AEON is similar.</p>
+<p>That being said, no one can steal your AEON because you use a remote node. </p> 
+<h1>You should really run your own node, or three, or twelve.</h1>
+<p>These remote nodes are not necessarily reliable, your mileage may vary, I do not play a lawyer on TV.</p>
+<p>Download your node software here: <a href="http://aeon.cash">aeon.cash</a></p> 
 <br>
-<p>MoneroWorld maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and MoneroWorld will detect it and include it. These are the Random Nodes seen below.</p>
-<p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and their status isn't checked (yet). So they may be down.</p>
+<p>Aeon-Wallet maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and Aeon-Wallet will detect it and include it. These are the Random Nodes seen below.</p>
+<p>The second type of open node are those listed as web addresses, like node.aeon-wallet.net. There are limited nodes in these addresses, and their status isn't checked (yet). So they may be down.</p>
 <h3>Please consider donating if you use these open nodes.</h3>
 <p>I run some of them, others run others.</p>
-<p>44UW4sPKb4XbWHm8PXr6K8GQi7jUs9i7t2mTsjDn2zK7jYZwNERfoHaC1Yy4PYs1eTCZ9766hkB6RLUf1y95EvCQNpCZnuu</p>
+<p>AEON: WmseELP9x3DQV4sm3CVgt4TmTjBxFuVunYfsDo325qMAZBU7AdumvNYjYGGzhNP9MUjdpX3WrX18FP1Se7s6u8nK1Z3juGEbu</p>
 <h1>Random Nodes!</h1>
-<p>MoneroWorld runs a <a href="https://github.com/Gingeropolous/moneriote">script<a/> every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
+<p>Aeon-Wallet runs a <a href="https://github.com/LesPristy/moneriote">script</a> every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
 <input type="button" id="btnSearch" value="Get Random Node!" onclick="GetValue();" />
-<p>Note that these nodes use port 18089, not the standard 18081.</p>
+<p>These nodes use the standard port: 11181.</p>
 <p id="message" >Press The Button!</p>
 <p>There are <span id="numnodes">this many random nodes</span> available</p>
 <br>
-<p> To use with monero-wallet-cli, just use these commands </p>
+<p> To use with aeon-wallet-cli, just use these commands </p>
 <h3>Windows</h3>
-<p><kbd>monero-wallet-cli.exe --daemon-address <span id="windows-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
+<p><kbd>aeon-wallet-cli.exe --daemon-address <span id="windows-node-ip">ADDRESS.OF.HOST</span>:11181</kbd></p>
 <h3>Unix-type (ubuntu, MacOS)</h3>
-<p><kbd>./monero-wallet-cli --daemon-address <span id="unix-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
+<p><kbd>./aeon-wallet-cli --daemon-address <span id="unix-node-ip">ADDRESS.OF.HOST</span>:11181</kbd></p>
 <br>
-<h3>Monero GUI</h3>
-<p>To use with the Monero GUI, enter the node address here (or the ip address). Be sure to enter the proper port!
-<img src="monero_gui_example.png" width="600">
+<h3>Aeon GUI (official)</h3>
+<p>To use with the Aeon GUI, enter the node address here (or the ip address). Be sure to enter the proper port!
+<img src="aeon_gui_example.png" width="600">
 
-<h3>Non-random Moneroworld Open Node Addresses</h3>
-<iframe data-aa='470448' src='//ad.a-ads.com/470448?size=120x60' scrolling='no' style='width:120px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
-<p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again.</p>
+<h3>Non-random Aeon-Wallet Open Node Addresses</h3>
+<p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again. Technically, this is considered DNS round-robin. It's actually pretty random too...</p>
 <br>
 <p><kbd>--daemon-host node.xmrbackb.one</kbd></p>
-<p>A high speed node network maintained by Snipa, developer and maintainer of xmrpool.net</p>
-<p><kbd>--daemon-host node.moneroworld.com</kbd></p>
-<p>Largest list of open nodes. This includes the geo-located nodes below.</p>
-<p><kbd>--daemon-host europe.moneroworld.com</kbd></p>
-<p>Nodes in Europe.</p>
-<p><kbd>--daemon-host useast.moneroworld.com</kbd></p>
-<p>Nodes in US Eastern</p>
-<p><kbd>--daemon-host uswest.moneroworld.com</kbd></p>
-<p>Nodes in US Western</p>
-<p><kbd>--daemon-host southafrica.moneroworld.com</kbd></p>
-<p>Nodes in South Africa</p>
+
 
 <br>
 
-<p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, you have two options.</p>
-<p>Option 1: you can simply add the following code to the launch of your daemon (and open your firewall), and the MoneroWorld script will sniff you out and add your node to the random list</p>
-<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18089 --restricted-rpc --confirm-external-bind</kbd></p>
-<p>Option 2: You can ask to be added to one of the address collection. There is limited space in these, so I only add high reliability nodes. You still need to launch your daemon with some special flags, and then please email me at gingeropolous@tutanota.com to ask me to add the node.</p>
-<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc --confirm-external-bind</kbd></p>
+<p>If you would like to offer your node up for inclusion in the Aeon-Wallet Network of Open Nodes: you can simply add the following code to the launch of your daemon (and open your firewall), and the MoneroWorld script will sniff you out and add your node to the random list</p>
+<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 11181 --restricted-rpc --confirm-external-bind</kbd></p>
 <br>
-<p><a href="https://github.com/Gingeropolous/moneriote">Run the script on your own daemon!<a/> 
+<p><a href="https://github.com/LesPristy/moneriote">Run the script on your own daemon!</a> 
 <h3>Hidden Nodes</h3>
-<p>i2p: gyzyfxa6y2ayqbycvci3dz2pc2tjf6rnkcttvb3aubtxawkrmg5q.b32.i2p</p>
-<p>Please consider only using this to push transactions and not full wallet synchronization.</p>
-<p>monerotools.i2p also has a raw transaction pusher</p>
-<br>
-<h1>Tor remote nodes</h1>
-<p>monerowinfamlvkp.onion </p>
+<p>We currently don't have any hidden nodes.</p>
+<p>Credits: This page was mostly ripped off from Moneroworld with a few modifications for AEON.</p>

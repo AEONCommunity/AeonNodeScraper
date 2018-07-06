@@ -1,21 +1,21 @@
 #!/bin/bash
-#Gingeropolous Open node checker
+#Gingeropolous Open node checker - modified by LesPristy for AEON
 
 
-DIR=/home/main12/files_moneriote
+DIR=/home/ubuntu/files_nodes
 
 
-monerod=monerod
-daemon=192.168.1.2
+monerod=aeond
+daemon=127.0.0.1
 
-DOMAIN=node.moneroworld.com
-html_dir=/var/www/mine.moneroworld.com/public_html/pages/
+DOMAIN=node.aeon-wallet.net
+html_dir=/var/www/www.aeon-wallet.net/public_html/pages/
 
 echo $monerod
 echo $daemon
 
 ###
-cd /home/main12/moneriote
+cd /home/ubuntu
 mkdir $DIR
 cd $DIR
 
@@ -34,7 +34,7 @@ export arr=($IPs)
 for i in "${arr[@]}"
 do
    : 
-	if nc -z -w 4 $i 18089  
+	if nc -z -w 4 $i 11181  
 	then 
 	echo "$i is up" 
 	opennodes+=($i)
@@ -73,8 +73,8 @@ for i in "${opennodes[@]}"
 do
    : 
 	echo "Checking ip: "$i
-	l_hit="$(curl -X POST http://$daemon:18089/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
-	r_hit="$(curl -m 20 -X POST http://$i:18089/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
+	l_hit="$(curl -X POST http://$daemon:11181/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
+	r_hit="$(curl -m 20 -X POST http://$i:11181/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
 	echo "Local Height: "$l_hit
 	echo "Remote Height: "$r_hit
         mini=$(( $l_hit-10 ))
