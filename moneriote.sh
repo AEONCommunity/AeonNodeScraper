@@ -6,7 +6,7 @@
 DIR=/home/ubuntu/files_moneriote
 
 # This is the path for your monerod binary.
-monerod=aeond
+monerod=/home/ubuntu/aeon/build/release/bin/aeond
 
 # This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
 daemon=127.0.0.1
@@ -15,10 +15,10 @@ daemon=127.0.0.1
 html_dir=/var/www/www.aeon-wallet.net/nodes/
 
 # Bound rpc port
-bport=11189
+bport=11181
 
 #Port to sniff for
-port=111181
+port=11181
 
 echo $monerod
 echo $daemon
@@ -26,7 +26,7 @@ echo $daemon
 ###
 
 mkdir $DIR
-cp /home/main12/moneriote/*.html $DIR
+cp /home/ubuntu/moneriote/*.html $DIR
 cd $DIR
 rm open_nodes.txt
 rm nodes.html
@@ -39,6 +39,8 @@ cp base.html node_script.html
 echo "##############"
 echo "Check network white nodes for domains to add"
 
+#launch a local daemon instance which will connect to another running daemon and request the current peer list
+#note that if the other daemon is running with the "restricted-rpc option", it will ignore "print_pl"
 white=$($monerod --rpc-bind-ip $daemon --rpc-bind-port $bport print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
 
 
