@@ -11,7 +11,7 @@ monerod=/home/ubuntu/aeon/build/release/bin/aeond
 # This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
 daemon=127.0.0.1
 
-#Where your going to dump the file that will be published
+#Where you're going to dump the file that will be published
 html_dir=/var/www/www.aeon-wallet.net/nodes/
 
 # Bound rpc port
@@ -94,6 +94,7 @@ cat node_script.html >> nodes.html
 echo `date` "The script finished" >> moneriote.log
 
 sudo cp nodes.html $html_dir/
+sudo cp open_nodes.txt $html_dir/
 
 # http://stackoverflow.com/questions/16753876/javascript-button-to-pick-random-item-from-array
 # http://www.javascriptkit.com/javatutors/randomorder.shtml
