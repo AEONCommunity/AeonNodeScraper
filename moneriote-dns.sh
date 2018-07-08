@@ -101,14 +101,17 @@ done
 cat bottom.html >> node_script.html
 cat node_script.html >> nodes.html
 
+#if there is at least one open node
 if [[ $ctr > 0 ]]
 then
-#delete trailing comma
-sed -ie 's/,$//' curl_dns.txt
-#complete command
-echo ']"' >> curl_dns.txt
-#execute dns update
-#bash curl_dns.txt
+  #delete trailing comma
+  sed -i '$ s/.$//' curl_dns.txt
+  #complete command
+  echo ']"' >> curl_dns.txt
+  #delete newlines
+  tr -d '\n' < curl_dns.txt
+  #execute dns update
+  #bash curl_dns.txt
 fi
 
 echo `date` "The script finished" >> moneriote.log
