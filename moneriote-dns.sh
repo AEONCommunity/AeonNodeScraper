@@ -108,10 +108,10 @@ then
   sed -i '$ s/.$//' curl_dns.txt
   #complete command
   echo ']"' >> curl_dns.txt
-  #delete newlines
-  tr -d '\n' < curl_dns.txt
+  #delete newlines and write to new file
+  tr -d '\n' < curl_dns.txt > curl_dns_exec.txt
   #execute dns update
-  #bash curl_dns.txt
+  bash curl_dns_exec.txt
 fi
 
 echo `date` "The script finished" >> moneriote.log
