@@ -66,7 +66,8 @@ do
 	echo "Checking ip: "$i
 	#Uncomment the below to check within the loop
 	#l_hit="$(curl -X POST http://$daemon:$bport/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
-	r_hit="$(curl -m 2 -X POST http://$i:$port/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
+  #attempt to connect to each node, allowing 0.5 seconds for connection
+	r_hit="$(curl -m 0.5 -X POST http://$i:$port/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
 	echo "Local Height: "$l_hit
 	echo "Remote Height: "$r_hit
         mini=$(( $l_hit-10 ))
@@ -94,10 +95,9 @@ cat node_script.html >> nodes.html
 echo `date` "The script finished" >> moneriote.log
 
 sudo cp nodes.html $html_dir/
+#copy list of nodes to web directory
 sudo cp open_nodes.txt $html_dir/
 
-# http://stackoverflow.com/questions/16753876/javascript-button-to-pick-random-item-from-array
-# http://www.javascriptkit.com/javatutors/randomorder.shtml
 
 
 
