@@ -66,7 +66,7 @@ do
 	echo "Checking ip: "$i
 	#Uncomment the below to check within the loop
 	#l_hit="$(curl -X POST http://$daemon:$bport/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
-	r_hit="$(curl -m 0.5 -X POST http://$i:$port/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
+	r_hit="$(curl -m 2 -X POST http://$i:$port/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
 	echo "Local Height: "$l_hit
 	echo "Remote Height: "$r_hit
         mini=$(( $l_hit-10 ))
