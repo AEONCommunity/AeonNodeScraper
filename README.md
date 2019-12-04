@@ -1,4 +1,4 @@
-# moneriote
+# AeonNodeScraper
 ## Portmanteu of Monero + Symbiote
 ### A symbiotic relationship exists between those that run open nodes and those that use them.
 #### Modified for AEON
@@ -19,19 +19,38 @@ as published by Sam Hocevar. See the COPYING file for more details.
 Modifications Copyright © 2018 LesPristy
 Released under the same fucking license.
 
+### Original work performed by Ginger the Great, Modified for ease of use with latest v0.13.0.0 Aeon daemons. 
+
 # DEPENDENCIES
 
-Developed and runs fine on Ubuntu 16  
-Bash  
-Monero daemon (monerod) in /bin/  
-a folder called ~/files_moneriote with the test wallet files located their. The script makes these  
-a love of bash  
+Developed and runs fine on Ubuntu 16.04 
+
+Aeon daemon (aeond) in folder you specify in ``moneriote.sh`` line 9.  
+
+A fully synced Aeond daemon running in another folder on same computer with ``--restriced-rpc`` not used and ``--rpc-bind-ip 0.0.0.0 --confirm-external-bind`` used.
+
+A folder named what you chose on line 6 of ``moneriote.sh`` located in the same directory that node list will be sent to.
+
+A folder named what you chose on line 15 of ``moneriote.sh`` located in the same directory that log files and HTML files will be sent to. 
+
 curl   
+
 netcat  
+
 dnsutils  
 
-sudo apt-get install dnsutils curl netcat  
+Use ``sudo apt-get install dnsutils curl netcat`` to install dependencies for scraper on Ubuntu 16.04
 
-# Crontab entry
-0,30 * * * * /home/monero/moneriote/moneriote.sh > /home/monero/files_moneriote/lastrun.log 2>&1
+For OSX, recommend to install ``brew install curl netcat dnstracer dnsmap dnstop``
 
+# How to run the scraper
+
+Start aeond and allow to fully sync the blockchain using ``--rpc-bind-ip 0.0.0.0 --confirm-external-bind``
+
+cd to folder moneriote.sh is loated in
+
+run ``./moneriote.sh`` and let it run until it stops. This may take a while if the daemon has synced with many daemons before.
+
+Once it finishes, cd to folder you noted on line 6 of ``moneriote.sh`` and run ``sudo nano open.nodes.txt`` and view all the open nodes that were picked up for port 11181.
+
+You can use this list to connect your local wallet to if desired as a "remote node" ip address. 
