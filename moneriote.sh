@@ -3,16 +3,16 @@
 
 # This is the directory where files are written to.
 # If you run as a cronjob, you have to use the full path
-DIR=/home/ubuntu/files_moneriote
+DIR=/home/ubuntu/nodelogs
 
 # This is the path for your monerod binary.
-monerod=/home/ubuntu/aeon/build/release/bin/aeond
+aeond=/home/ubuntu/aeon/build/release/bin/aeond
 
 # This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
-daemon=127.0.0.1
+daemon=0.0.0.0
 
 #Where you're going to dump the file that will be published
-html_dir=/var/www/www.aeon-wallet.net/nodes/
+html_dir=/home/ubuntu/nodelogs/logs
 
 # Bound rpc port
 bport=11181
@@ -20,7 +20,7 @@ bport=11181
 #Port to sniff for
 port=11181
 
-echo $monerod
+echo $aeond
 echo $daemon
 
 ###
@@ -41,7 +41,7 @@ echo "Check network white nodes for domains to add"
 
 #launch a local daemon instance which will connect to another running daemon and request the current peer list
 #note that if the other daemon is running with the "restricted-rpc option", it will ignore "print_pl"
-white=$($monerod --rpc-bind-ip $daemon --rpc-bind-port $bport print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
+white=$($aeond --rpc-bind-ip $daemon --rpc-bind-port $bport print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
 
 
 white_a=($white)
@@ -98,6 +98,6 @@ sudo cp nodes.html $html_dir/
 #copy list of nodes to web directory
 sudo cp open_nodes.txt $html_dir/
 
-
+#have a nice day and let others know about these open nodes if they ask. Re-run the tool to get "current" open nodes. 
 
 
