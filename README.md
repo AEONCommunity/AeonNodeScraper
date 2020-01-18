@@ -19,7 +19,7 @@ as published by Sam Hocevar. See the COPYING file for more details.
 Modifications Copyright © 2018 LesPristy
 Released under the same fucking license.
 
-### Original work performed by Ginger the Great, Modified for ease of use with latest v0.13.0.0 Aeon daemons. 
+### Original work performed by Ginger the Great, Modified for ease of use with latest v0.13.0.0+ Aeon daemons. 
 
 # DEPENDENCIES
 
